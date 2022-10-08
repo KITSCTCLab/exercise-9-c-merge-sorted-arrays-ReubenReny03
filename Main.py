@@ -4,19 +4,29 @@ def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
   new_arr_1 = nums1[0:m]
   new_arr_2 = nums2[0:n]
   sorted_array = []
-  if m>n:
-    for x in range(len(new_arr_1)-1):
-      if new_arr_1[x] < new_arr_2[x]:
-        sorted_array.append(new_arr_1[x])
+  i = 0
+  j = 0
+  k = 0     
+  while i < len(new_arr_1) and j < len(new_arr_2):
+      if new_arr_1[i] <= new_arr_2[j]:
+        sorted_array[k] = new_arr_1[i]
+        i += 1
       else:
-        sorted_array.append(new_arr_2[x])
-  else:
-    for x in range(len(new_arr_2)-1):
-      if new_arr_1[x] < new_arr_2[x]:
-        sorted_array.append(new_arr_1[x])
-      else:
-        sorted_array.append(new_arr_2[x])
-       
+          sorted_array[k] = new_arr_2[j]
+          j += 1
+      k += 1
+
+  while i < len(new_arr_1):
+      sorted_array[k] = new_arr_1[i]
+      i += 1
+      k += 1
+
+  while j < len(new_arr_2):
+      sorted_array[k]=new_arr_2[j]
+      j += 1
+      k += 1
+  nums1 = sorted_array
+  
 # Do not change the following code
 nums1 = []
 nums2 = []
