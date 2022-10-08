@@ -10,8 +10,8 @@ def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         sorted_array.append(new_arr_1[x])
       else:
         sorted_array.append(new_arr_2[x])
-  elif m>n:
-    for x in range(len(new_arr_1)-1):
+  else:
+    for x in range(len(new_arr_2)-1):
       if new_arr_1[x] < new_arr_2[x]:
         sorted_array.append(new_arr_1[x])
       else:
