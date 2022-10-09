@@ -8,7 +8,7 @@ def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
     k = 0
     while(i<len(smalla) and j<len(smallb)):
         if (smalla[i] <= smallb[j]):
-            nums1[k] = smalla[j]
+            nums1[k] = smalla[i]
             i+=1
         else:
             nums1[k] = smallb[j]
